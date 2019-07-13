@@ -1,5 +1,6 @@
 <img src="https://raw.githubusercontent.com/nertsam/DAGsched/master/logo_large.png" height="37px" width="100px" >
-<!-- Getting Started -->
+
+<!-- ABOUT -->
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
