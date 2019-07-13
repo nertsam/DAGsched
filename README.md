@@ -1,4 +1,4 @@
-![DAGsched](https://raw.githubusercontent.com/nertsam/DAGsched/master/logo.png)
+![DAGsched](https://raw.githubusercontent.com/nertsam/DAGsched/master/res/logo.png)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
