@@ -11,8 +11,8 @@ class App(QMainWindow):
         self.title = 'DAGsched - DAG Generation & Analysis Suite'
         self.left = 0
         self.top = 0
-        self.width = 300
-        self.height = 200
+        self.width = 800
+        self.height = 600
 
         self.menuBar = QMenuBar()
         self.menuBar.addMenu('&File')
