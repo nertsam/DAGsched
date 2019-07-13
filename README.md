@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/nertsam/DAGsched/master/res/logo.png){:height="700px" width="400px"}
+<img src="https://raw.githubusercontent.com/nertsam/DAGsched/master/res/logo.png" height="25px" width="25px" > DAGsched
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
