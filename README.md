@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/nertsam/DAGsched/master/logo_large.png" height="40px" width="90px" >
+<img src="https://raw.githubusercontent.com/nertsam/DAGsched/master/logo_large.png" height="148px" width="400px" >
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
