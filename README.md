@@ -1,15 +1,4 @@
 <img src="https://raw.githubusercontent.com/nertsam/DAGsched/master/logo_large.png" height="37px" width="100px" >
-[![Build Status][build-shield]](social)
-
-### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
-
-
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
