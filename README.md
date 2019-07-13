@@ -1,6 +1,7 @@
+![DAGsched](https://raw.githubusercontent.com/nertsam/DAGsched/master/logo.png)
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
 [![Build Status][build-shield]](social)
 [![MIT License][license-shield]][license-url]
 
