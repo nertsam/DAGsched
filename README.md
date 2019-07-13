@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/nertsam/DAGsched/master/res/logo.png)<!-- .element height="25px" width="25px" -->
+![](https://raw.githubusercontent.com/nertsam/DAGsched/master/res/logo.png){:height="700px" width="400px"}
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
