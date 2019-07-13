@@ -1,14 +1,14 @@
 import sys
 import PyQt5.QtGui
-from PyQt5.QtCore import QSize
-from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QWidget, QTabWidget, QVBoxLayout, QMenuBar
+from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QWidget, QTabWidget, QVBoxLayout, QAction, QMenuBar, QToolBar
 from view import MouseTrackingQWidget, TaskGeneratorQWidget, TaskStatisticsQWidget, GraphDrawingQWidget
+
 
 class App(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.title = 'DAGsched'
+        self.title = 'DAGsched - DAG Generation & Analysis Suite'
         self.left = 0
         self.top = 0
         self.width = 300
@@ -20,6 +20,15 @@ class App(QMainWindow):
         self.menuBar.addMenu('&Settings')
         self.menuBar.addMenu('&View')
 
+        maximizeAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-home-24px.svg'), 'Maximize', self)
+        minimizeAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-build-24px.svg'), 'Minimize', self)
+        scheduleAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-schedule-24px.svg'), 'Schedule', self)
+
+
+        self.toolBar = self.addToolBar("MainToolBar")
+        self.toolBar.addAction(maximizeAction)
+        self.toolBar.addAction(minimizeAction)
+        self.toolBar.addAction(scheduleAction)
         self.setMenuBar(self.menuBar)
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
