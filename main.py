@@ -1,6 +1,7 @@
 import sys
 import PyQt5.QtGui
-from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QWidget, QTabWidget, QVBoxLayout, QAction, QMenuBar, QToolBar
+from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QWidget, QTabWidget, QVBoxLayout, \
+    QAction, QMenuBar, QToolBar, QStatusBar
 from view import MouseTrackingQWidget, TaskGeneratorQWidget, TaskStatisticsQWidget, GraphDrawingQWidget
 
 
@@ -24,7 +25,8 @@ class App(QMainWindow):
         minimizeAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-build-24px.svg'), 'Minimize', self)
         scheduleAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-schedule-24px.svg'), 'Schedule', self)
 
-
+        self.statusBar = QStatusBar()
+        self.setStatusBar(self.statusBar)
         self.toolBar = self.addToolBar("MainToolBar")
         self.toolBar.addAction(maximizeAction)
         self.toolBar.addAction(minimizeAction)
