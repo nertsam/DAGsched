@@ -25,12 +25,29 @@ class App(QMainWindow):
         minimizeAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-build-24px.svg'), 'Minimize', self)
         scheduleAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-schedule-24px.svg'), 'Schedule', self)
 
+        createNewFolderAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-create_new_folder-24px.svg'), 'New Folder', self)
+        createAnalysisAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-pie_chart-24px.svg'), 'Analysis', self)
+        saveAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-save-24px.svg'), 'Save', self)
+        simulateScheduleAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-undo-24px.svg'), 'Simulate', self)
+
+        zoomInAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-zoom_in-24px.svg'), 'Zoom In', self)
+        zoomOutAction = QAction(PyQt5.QtGui.QIcon('./res/icons/baseline-zoom_out-24px.svg'), 'Zoom Out', self)
+
         self.statusBar = QStatusBar()
         self.setStatusBar(self.statusBar)
         self.toolBar = self.addToolBar("MainToolBar")
+
         self.toolBar.addAction(maximizeAction)
         self.toolBar.addAction(minimizeAction)
         self.toolBar.addAction(scheduleAction)
+        self.toolBar.addAction(createAnalysisAction)
+        self.toolBar.addAction(createNewFolderAction)
+        self.toolBar.addAction(saveAction)
+        self.toolBar.addAction(zoomInAction)
+        self.toolBar.addAction(zoomOutAction)
+        self.toolBar.addAction(simulateScheduleAction)
+
+
         self.setMenuBar(self.menuBar)
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
