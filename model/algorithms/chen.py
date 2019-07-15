@@ -1,28 +1,34 @@
 import math
-import numpy as np
+import model.algorithms.SchedulingTest
 
-def util(task):
-    return float(task['execution'])/task['period']
+@requires('sad')
+class ChenExtendedWindowAnalysis(model.algorithms.SchedulingTest):
+    def __init__(self):
+        super(ChenExtendedWindowAnalysis, self).__init__()
 
-def intersect(a,b):
-    """
-    intersection of [a0, a1] and [b0, b1]
-    """
-    # verfiy input s.t. a, b in R+
-    if a[0] <= 0 or a[1] <= 0 or b[0] <= 0 or b[1] <= 0:
-        return (0,0)        
-    
-    # verify input s.t. a0 < a1 and b0 < b1
-    if a[0] > a[1] or b[0] > b[1]:
-        return (0, 0)
 
-    if (b[0] <= a[0]) and (a[0] <= b[1]):
-        return (b[0], max(a[1], b[1]))
-    
-    if (a[0] <= b[0] and (b[0] <= a[1])):
-        return (a[0], max (a[1], b[1]))
-    
-    return (0,0)
+
+    @staticmethod
+    def util(task):
+        return float(task['execution'])/task['period']
+
+    @staticmethod
+    def intersect(interval_x, interval_y):
+
+        if interval_lhs[0] <= 0 or interval_lhs[1] <= 0 or interval_rhs[0] <= 0 or interval_rhs[1] <= 0:
+            return (0, 0)
+
+        # verify input s.t. a0 < a1 and b0 < b1
+        if a[0] > a[1] or b[0] > b[1]:
+            return (0, 0)
+
+        if (b[0] <= a[0]) and (a[0] <= b[1]):
+            return (b[0], max(a[1], b[1]))
+
+        if (a[0] <= b[0] and (b[0] <= a[1])):
+            return (a[0], max (a[1], b[1]))
+
+        return (0,0)
 
 def l_max_increasing(task, mu, processors):
     rho = float(processors-mu)/(processors-1)    

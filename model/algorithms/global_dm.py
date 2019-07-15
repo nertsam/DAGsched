@@ -3,6 +3,7 @@ import math
 import chen
 import huang
 
+@model("global.multiprocessor.deadline.monotonic', ['DAG', 'sporadic', 'implicit'])
 def schedulable(taskset, processors, gamma = None):
     if gamma is None:
         heavy_tasks = [task for task in taskset if task['execution'] > task['deadline']]

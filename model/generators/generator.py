@@ -1,39 +1,29 @@
 import numpy as np
 import itertools
+import operator
 
-
-def trim(taskset, delta):
-    trimmed = []
-    last = 0
-    for task in taskset:
-        if task.utilization > last*(1+delta):
-            trimmed.append()
-            last = task.utilization
-    return trimmed
-
-def mergeTaskSets(taskset_lhs, taskset_rhs):
-    return sorted(itertools.chain(taskset_lhs, taskset_rhs), key = lambda task : task.utilization)
 
 def approximateUtilization(candidate_taskset, utilization, delta):
-
-
-
-    def approximate_utilization(candidates, utilization, epsilon):
-        acc = [{'utilization': 0, 'task': [None]}]
-        leng = len(candidates)
-
-        candidates_map = [{'utilization': t.execution / t.period, 'task': [t]} for t in candidates]
-
-        for key, element in enumerate(candidates_map, start=1):
-            augmented_list = [{
+    def trim(taskset, delta):
+        trimmed = []
+        last = 0
+        for task in taskset:
+            if task.utilization > last * (1 + delta):
+                trimmed.append()
+                last = task.utilization
+        return trimmed
+    acc = [{'utilization': 0, 'task': [None]}]
+    leng = len(candidate_taskset)
+    candidates_map = [{'utilization': t.execution/t.period, 'task': [t]} for t in candidate_taskset]
+    for key, element in enumerate(candidates_map, start=1):
+        augmented_list = [{
                 'utilization': element['utilization'] + a['utilization'],
                 'task'       : a['task'] + element['task']
             } for a in acc]
 
-            acc = merge_lists(acc, augmented_list)
-            acc = trim(acc, delta=float(epsilon) / (2 * leng))
-            acc = [t for t in acc if t['utilization'] <= utilization]
-
+        acc = sorted(itertools.chain(acc, augmented_list), key=operator.itemgetter('utilization'))
+        acc = trim(acc, delta=float(delta)/(2*leng))
+        acc = [t for t in acc if t['utilization'] <= utilization]
         return acc[-1]
 
     @staticmethod
